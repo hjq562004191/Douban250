@@ -3,5 +3,5 @@ package service;
 import Pojo.Page;
 
 public interface ProcessService {
-    public void process(Page page);
+    public void process(String s);
 }

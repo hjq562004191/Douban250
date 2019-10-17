@@ -1,6 +1,5 @@
 package util;
 
-import Pojo.Page;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
@@ -15,7 +14,7 @@ import java.io.IOException;
 
 public class PageDownLoadUtil {
 
-    public static String getPageContent(String url){
+    public static String getPageContent(String url) {
         HttpClientBuilder builder = HttpClients.custom();
         CloseableHttpClient client = builder.build();
 
@@ -33,11 +32,5 @@ public class PageDownLoadUtil {
         return content;
     }
 
-    public static void main(String[] args) {
-        String url = "https://movie.douban.com/chart";
-        Page page = new Page();
-        page.setContent(PageDownLoadUtil.getPageContent(url));
-        ProcessService ps = new ProcessServiceImpl();
-        ps.process(page);
-    }
+
 }
