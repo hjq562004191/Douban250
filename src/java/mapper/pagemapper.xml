@@ -3,15 +3,8 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<!--namespace 理解成实现类的全路径  包名+类名-->
 <mapper namespace="mapper.Pagemapper">
-<!--    <resultMap type="Pojo.Page" id="tab_department">-->
-<!--        <id property="id" column="id"/>-->
-<!--        <result property="title" column="title"/>-->
-<!--        <result property="commentcount" column="commentcount"/>-->
-<!--        <result property="fenshu" column="fenshu"/>-->
-<!--        <result property="jieshao" column="jieshao"/>-->
-<!--    </resultMap>-->
+
     <insert id="addPage" parameterType="Pojo.Page">
         insert into page values (#{id} ,#{commentcount} ,#{title} ,#{jieshao} ,#{fenshu})
     </insert>

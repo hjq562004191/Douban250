@@ -16,7 +16,7 @@ public class pageImpl implements pageService {
     public int save(Page page) throws IOException {
         InputStream is = Resources.getResourceAsStream("mybatis-config.xml");
         SqlSessionFactory factory = new SqlSessionFactoryBuilder().build(is);
-        SqlSession sqlSession = factory.openSession(true);
+        SqlSession sqlSession = factory.openSession(true); //设置自动提交事务
 
         int i = sqlSession.insert("addPage",page);
         return i;
