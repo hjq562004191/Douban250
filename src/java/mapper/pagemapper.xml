@@ -6,7 +6,7 @@
 <mapper namespace="mapper.Pagemapper">
 
     <insert id="addPage" parameterType="Pojo.Page">
-        insert into page values (#{id} ,#{commentcount} ,#{title} ,#{jieshao} ,#{fenshu})
+        insert into page values (#{id} ,#{url},#{commentcount} ,#{title} ,#{jieshao} ,#{fenshu})
     </insert>
 
     <select id="selectAll" resultType="Pojo.Page">

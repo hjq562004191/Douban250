@@ -4,6 +4,7 @@ import Pojo.Page;
 import org.htmlcleaner.HtmlCleaner;
 import org.htmlcleaner.TagNode;
 import org.htmlcleaner.XPatherException;
+import util.htmlUtil;
 
 import java.io.IOException;
 
@@ -21,6 +22,10 @@ public class ProcessServiceImpl implements ProcessService {
         //获取标题
         try {
             for (int i = 1; i <= 25; i++) {
+                //电影链接
+                String href = htmlUtil.getAttributeByName(rootNode,"//*[@id=\"content\"]/div/div[1]/ol/li["+i+"]/div/div[1]/a","href");
+                System.out.print(href + " ");
+                page.setUrl(href);
                 //标题
                 Object[] objects = rootNode.evaluateXPath("//*[@id=\"content\"]/div/div[1]/ol/li["+i+"]/div/div[2]/div[1]/a/span[1]");
                 if (objects.length > 0) {//有东西
@@ -54,7 +59,6 @@ public class ProcessServiceImpl implements ProcessService {
                     System.out.println("保存失败");
                 }
             }
-
         } catch (XPatherException e) {
             e.printStackTrace();
         } catch (IOException e) {

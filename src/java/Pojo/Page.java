@@ -6,6 +6,8 @@ package Pojo;
 public class Page {
     //id
     private int id;
+    //电影链接
+    private String url;
     //评论数
     private String commentcount;
     //电影名称
@@ -33,6 +35,14 @@ public class Page {
 
     public String getTitle() {
         return title;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public void setTitle(String title) {
